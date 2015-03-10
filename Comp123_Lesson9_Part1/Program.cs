@@ -14,6 +14,13 @@ namespace Comp123_Lesson9_Part1
             string fileName = "testFile.txt";
 
             FileStream outFile = new FileStream(fileName, FileMode.Create, FileAccess.Write);
+
+            StreamWriter writer = new StreamWriter(outFile);
+
+
+
+
+            writer.Close();
            
             outFile.Close();
 
