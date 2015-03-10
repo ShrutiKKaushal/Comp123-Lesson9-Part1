@@ -11,19 +11,43 @@ namespace Comp123_Lesson9_Part1
     {
         static void Main(string[] args)
         {
-            string fileName = "testFile.txt";
 
-            FileStream outFile = new FileStream(fileName, FileMode.Create, FileAccess.Write);
+            try
+            {
 
-            StreamWriter writer = new StreamWriter(outFile);
+                
+                string pathName = "C:\\Users\\300804023.CENCOL\\Documents\\Visual Studio 2013\\Projects\\";
+                string fileName = "testFile.txt";
+                string delimeter = ",";
+
+                FileStream outFile = new FileStream(pathName + fileName, FileMode.Create, FileAccess.Write);// FileName, ModeOfFile, Access
+
+                StreamWriter writer = new StreamWriter(outFile); // Object Writer
 
 
+                for (int i = 0; i < 4; i++)
+                {
 
+                    writer.Write("Hello World ..!");
+                    if(i < 3)
+                    {
+                        writer.Write(delimeter); // writes to the file
+                    }
+                }
 
-            writer.Close();
+                writer.Close(); // closes actual file
+
+                outFile.Close(); // closes file stream
+
+            }
+
+            catch(Exception e)
+            {
+                Console.WriteLine("Your code caused an error");
+                Console.WriteLine("Error: {0}", e.Message);
+            }
+
            
-            outFile.Close();
-
             WaitForKey();
         }
 
