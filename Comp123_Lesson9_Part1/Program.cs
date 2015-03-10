@@ -11,6 +11,12 @@ namespace Comp123_Lesson9_Part1
     {
         static void Main(string[] args)
         {
+            string fileName = "testFile.txt";
+
+            FileStream outFile = new FileStream(fileName, FileMode.Create, FileAccess.Write);
+           
+            outFile.Close();
+
             WaitForKey();
         }
 
