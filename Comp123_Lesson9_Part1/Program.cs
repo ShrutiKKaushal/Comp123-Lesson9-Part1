@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO; // need this for any system Input / output
 
 namespace Comp123_Lesson9_Part1
 {
@@ -10,8 +11,11 @@ namespace Comp123_Lesson9_Part1
     {
         static void Main(string[] args)
         {
+            WaitForKey();
+        }
 
-            // UTILITY METHODS
+
+        // UTILITY METHODS
         private static void WaitForKey()
         {
             Console.WriteLine();
@@ -20,7 +24,6 @@ namespace Comp123_Lesson9_Part1
             Console.WriteLine("++++++++++++++++++++++++++++++++++");
             Console.ReadKey();
             Console.Clear();
-        }
         }
     }
 }
